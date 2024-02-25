@@ -45,6 +45,38 @@ ul
     display: block;
     padding: 0 30px;
     opacity: 1;
+    position: fixed;
+    left: 270px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+}
+
+.section.back-section
+{
+    z-index: 1;
+}
+
+.section.active
+{
+    z-index: 2;
+    opacity: 1;
+    animation: slideSection 1s ease;
+}
+@keyframes slideSection
+{
+    0%
+    {
+        transform: translateX(100%);
+    }
+    100%
+    {
+        transform: translateX(0%);
+    }
 }
 
 .hidden
@@ -52,10 +84,6 @@ ul
     display: none !important;
 }
 
-.main_content
-{
-    padding-left: 270px;
-}
 
 .padd-15
 {
@@ -161,6 +189,7 @@ ul
     padding: 30px;
     height: 100%;
     z-index: 10;
+    transition: all 0.3s ease;
 }
 
 .aside .logo
@@ -226,6 +255,7 @@ ul
     display: none;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
 }
 
 .aside .nav-toggler span
@@ -751,10 +781,27 @@ h3.my-profession
     {
         left: -270px;
     }
-    .main_content
+    .aside.open
     {
-        padding-left: 0;
+        left: 0;
     }
+   .aside .nav-toggler
+   {
+    display: flex;
+    left: 30px;
+   }
+   .aside .nav-toggler.open
+   {
+    left: 300px;
+   }
+   .section
+   {
+    left: 0;
+   }
+   .section.open
+   {
+    left: 270px;
+   }
     .about .about-content .personal-info .info-item p span
     {
         display: block;
